@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: linear-gradient(90deg, hsla(333, 100%, 53%, 1) 0%, hsla(33, 94%, 57%, 1) 100%);;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-family: 'Dosis', sans-serif;
+}
+
+.container {
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	background: rgba(255, 255, 255, 0.75);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 25px;
+	box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+	color: #232323;
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	background: rgba(255, 255, 255, 0.30);
+	border: 1px solid rgba(255, 255, 255, 0.34);
+	flex-basis: 400px;
+	height: 540px;
+	padding: 20px 35px;
+}
+
+.screen {
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	background: rgba(255, 255, 255, 0.75);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+	color: #232323;
+	font-size: 35px;
+	overflow: auto;
+	padding: 20px;
+	text-align: right;
+	width: 326px;
+	font-family: 'Dosis', sans-serif;
+	font-weight: 500;
+}  
+
+.cal-number-row {
+	display: flex;
+	justify-content: space-between;
+	margin: 5% 0;
+}
+
+.cal-button {
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	background: rgba(255, 255, 255, 0.75);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+	color: #232323;
+	font-size: 24px;
+	overflow: auto;
+	height: 65px;
+	flex-basis: 20%;
+}
+
+.symbol, .equals {
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	background: rgba(255, 255, 255, 0.75);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+	color: #232323;
+	font-size: 24px;
+	overflow: auto;
+	height: 65px;
+	flex-basis: 20%;
+}
+
+.cal-button:hover {
+	background: inherit;
+	border: 1px solid #646363
+}
+
+.cal-button:active {
+	background: #f5c08f;
+}
+
+.clear {
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	background: rgba(255, 255, 255, 0.75);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+	color: #232323;
+	font-size: 24px;
+	overflow: auto;
+	height: 65px;
+	flex-basis: 47%;
+}
+
+.clear:hover {
+	background: inherit;
+	border: 1px solid #646363
+}
+
+.clear:active {
+	background: #f5c08f;
+} 
+
+.larr {
+	backdrop-filter: blur(5.5px);
+	-webkit-backdrop-filter: blur(5.5px);
+	background: rgba(255, 255, 255, 0.75);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+	color: #232323;
+	font-size: 24px;
+	overflow: auto;
+	height: 65px;
+	flex-basis: 20%;
+}
+
+
+.larr:hover {
+	background: inherit;
+	border: 1px solid #646363
+}
+
+.larr:active {
+	background: #f5c08f;
+} 
+
+.zero {
+	flex-basis: 73%;
+}
+
+.symbol, .equals {
+	background: #fa4343;
+}
+
+.equals:hover {
+	background: #f14141;
+	border: 1px solid #646363
+}
+.equals:active {
+	background: #d13838;
+}
+.symbol:hover {
+	background: #f14141;
+	border: 1px solid #646363
+}
+
+.symbol:active {
+	background: #d13838;
+}
+
+
+
+
+
+
+
