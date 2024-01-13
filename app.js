@@ -1,18 +1,21 @@
 // переменные 
 let screen = document.querySelector('.screen')
-let num = parseInt(screen.value)
-let sum = 0
 const buttons = Array.from(document.getElementsByClassName('cal-button'))
 const symbols = Array.from(document.getElementsByClassName('symbol')) 
 const clear = document.querySelector('.clear')
 const larr = document.querySelector('.larr')
 const equals = document.querySelector('.equals')
 
-
-
 // доп переменные
+let symbolValue
+let num 
+
 let buffer = '0'
 let total = 0
+let sum = 0
+
+let isAdding = false
+let num1 = 0
 
 // функция для получение значение цифр
 buttons.forEach((button) => {
@@ -23,7 +26,6 @@ buttons.forEach((button) => {
 		} else if (screen.value.length = 1) {
 			screen.value += buttonValue
 		}
-		
 	});
 });
 
@@ -34,6 +36,7 @@ clear.addEventListener('click', () => {
 	num1 = 0
 })
 
+// Фунция для удаления одного элемента
 larr.addEventListener('click', () => {
 	if (screen.value.length === 1) {
 		screen.value = '0'
@@ -44,16 +47,13 @@ larr.addEventListener('click', () => {
 
 //	function to sum a numbers
 
-let isAdding = false
-let num1 = 0
+
 
 symbols.forEach((symbol) => {
 	symbol.addEventListener('click', function() {
-		const symbolValue = this.value;
-		
+		symbolValue = this.value;
+		num = parseInt(screen.value)
 		if(symbolValue === '+') {
-			let num = parseInt(screen.value)
-			console.log(num);
 			if (!isNaN(num)) {
 				if (isAdding === true) {
 					let sum = num1 + num
@@ -65,15 +65,9 @@ symbols.forEach((symbol) => {
 					num1 = num
 					screen.value = '0'
 					isAdding = true;
-					console.log('else' + num);
 				}
 			}
-				
-	
-				
-		}else if(symbolValue === '-') {
-			let num = parseInt(screen.value)
-			console.log(num);
+		} else if (symbolValue === '-') {
 			if (!isNaN(num)) {
 				if (isAdding === true) {
 					let sum = num1 - num
@@ -87,14 +81,11 @@ symbols.forEach((symbol) => {
 				}
 			}
 		} else if(symbolValue === '÷') {
-			let num = parseInt(screen.value)
-			console.log(num);
 			if (!isNaN(num)) {
 				if (isAdding === true) {
 					let sum = num1 / num
 					screen.value = sum
 					num1 = sum
-					
 					isAdding = false
 				} else {
 					num1 = num
@@ -103,15 +94,12 @@ symbols.forEach((symbol) => {
 				}
 			}
 		} else if(symbolValue === '×') {
-			let num = parseInt(screen.value)
-			console.log(num);
 			if (!isNaN(num)) {
 				if (isAdding === true) {
 					let sum = num1 * num
 					screen.value = sum
 					num1 = sum
-					
-					isAdding = false
+					isAdding = false					
 				} else {
 					num1 = num
 					screen.value = '0'
@@ -121,49 +109,29 @@ symbols.forEach((symbol) => {
 		} else {
 			screen.value = 'You wrote down Not a number!'
 		}
-		
-	})	
+	})
 })
 
 
-
-
-
-
-
-
-
-
-// ...
 // Ваш код до этого момента остается неизменным
 
 equals.addEventListener('click', () => {
 	const currentNum = parseInt(screen.value);
-	if (!isNaN(currentNum) && isAdding) {
-		if (symbols.length > 0) {
-			let result;
-			switch (symbols[0].value) {
-				case '+':
-					result = num1 + currentNum;
-					break;
-				case '-':
-					result = num1 - currentNum;
-					break;
-				case '÷':
-					result = num1 / currentNum;
-					break;
-				case '×':
-					result = num1 * currentNum;
-					break;
-			}
-			screen.value = result;
-			num1 = result;
-			isAdding = false;
-
-			symbols.splice(0, 1);
-		}
+	let result
+	if (symbolValue === '+') {
+		result = num + currentNum;
+		screen.value = result;
+	} else if(symbolValue === '-') {
+		result = num - currentNum;
+		screen.value = result;
+	} else if(symbolValue === '×') {
+		result = num * currentNum;
+		screen.value = result;
+	} else if(symbolValue === '÷') {
+		result = num / currentNum;
+		screen.value = result;
 	}
-});
-
-
+	isAdding = false;
+	}
+);
 
